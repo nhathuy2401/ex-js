@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function ex01(str) {
+        return str.split('').sort().join('');
+    }
+    console.log(ex01("bcas"));
+
+    function ex02(str) {
+        var splitStr = str.toLowerCase().split(' ');
+        for (var i = 0; i < splitStr.length; i++) {
+
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        return splitStr.join(' ');
+    }
+    console.log(ex02("con meo tren canh cayx"));
+
+    function ex03(array01, array02) {
+        var result = [];
+        var control = 0;
+        var x = 0;
+
+        if (array01.length === 0) {
+            return "Arrays1 is empty";
+
+        } else if (array02.length === 0) {
+            return "Arrays2 is empty";
+
+        }
+        while (control < array01.length && control < array02.length) {
+            result.push(array01[control] + array02[control])
+            control++;
+        }
+        if (control === array01.length) {
+            for (x = control; x < array02.length; x++) {
+                result.push(array02[x]);
+            }
+
+        } else {
+            for (x = control; x < array01.length; x++) {
+                result.push(array01[x]);
+            }
+        }
+        return result;
+    }
+    console.log(ex03([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
+
+
+    var ex04 = {
+        name: "Nhat Huy",
+        class: "HT",
+        rollno: 10
+    };
+    console.log(Object.keys(ex04));
+
+
+
+    function ex05(array) {
+        return array.filter(x => x !== null && x !== false && x !== '0' && x !== NaN);
+    }
+</script>
+
+<body>
+
+
+</body>
+
+</html>
